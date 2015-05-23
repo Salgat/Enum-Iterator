@@ -39,28 +39,58 @@ namespace enumit {
             int current_position;
 
         public:
-            Iterator(int index) {
+            Iterator(Iterator const& iter) = default;
+
+            Iterator(int index = 0) {
                 current_position = index;
             }
 
-            Iterator & operator+(int value) {
+            ~Iterator(){}
+
+            Iterator& operator=(Iterator const& iter) = default;
+
+            Iterator operator+(int const value) {
+                auto temp(*this);
+                temp.current_position += value;
+                return temp;
+            }
+
+            Iterator& operator+=(int const value) {
                 current_position += value;
                 return *this;
             }
 
-            Iterator & operator-(int value) {
+            Iterator operator-(int const value) {
+                auto temp(*this);
+                temp.current_position -= value;
+                return temp;
+            }
+
+            Iterator& operator-=(int const value) {
                 current_position -= value;
                 return *this;
             }
 
-            Iterator & operator++() {
+            Iterator& operator++() {
                 ++current_position;
                 return *this;
             }
 
             Iterator operator++(int) {
+                auto temp(*this);
                 ++current_position;
+                return temp;
+            }
+
+            Iterator& operator--() {
+                --current_position;
                 return *this;
+            }
+
+            Iterator operator--(int) {
+                auto temp(*this);
+                --current_position;
+                return temp;
             }
 
             bool operator==(Iterator const& other) const {
