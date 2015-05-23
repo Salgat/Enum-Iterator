@@ -1,3 +1,11 @@
+Enum-Iterator (EnumIt)
+=================
+
+Enum-Iterator (EnumIt) is a header only C++11 library that supports iterators for enum and enum class type. EnumIt requires that the enumeration has no custom values (such as enum sample {VALUE = 1}) and requires knowledge of the last entry in the enumeration.
+
+Example
+-----------------
+```c++
 #include <iostream>
 #include <string>
 
@@ -28,3 +36,4 @@ int main() {
 
     return 0;
 }
+```
