@@ -26,9 +26,7 @@ namespace enumit {
     public:
         enum_class last;
 
-        Iterate() {
-
-        }
+        Iterate() = default;
 
         Iterate(enum_class last_) {
             last = static_cast<enum_class>(static_cast<int>(last_)+1);
