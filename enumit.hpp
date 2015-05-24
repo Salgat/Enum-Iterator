@@ -126,7 +126,7 @@ namespace enumit {
     };
 
     /**
-     * Provides an iterable class used for ranged-based for loops.
+     * Returns iterator pointing to one past the last element of enumeration.
      */
     template<class enum_class>
     typename Iterate<enum_class>::Iterator End(enum_class last_entry) {
