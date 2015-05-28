@@ -117,12 +117,10 @@ namespace enumit {
 
     /**
      *  Returns iterator pointing to first element of enumeration.
-     *
-     *  Note: The default argument is for people who want visual consistency between Begin(last_enum) and End(last_enum).
      */
     template<class enum_class>
-    typename Iterate<enum_class>::Iterator Begin(enum_class ignore = static_cast<enum_class>(0)) {
-        return typename Iterate<enum_class>::Iterator(0);
+    typename Iterate<enum_class>::Iterator Begin(enum_class start = static_cast<enum_class>(0)) {
+        return typename Iterate<enum_class>::Iterator(static_cast<int>(start));
     };
 
     /**
